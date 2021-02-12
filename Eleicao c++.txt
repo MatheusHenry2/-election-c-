@@ -1,0 +1,70 @@
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+int main()
+{
+    int cod, n, maria = 0, joao = 0, branco = 0, total = 0, senha = 3571, pass, nulo = 0;
+
+    cout << "\n Digite o numero total de eleitores : ";
+    cin >> n;
+
+    for (int i = 0; i < n; i++)
+    {
+        cout << "\n Codigo   |  Candidato ";
+        cout << "\n   11     |  Joao       ";
+        cout << "\n   45     |  Maria       ";
+        cout << "\n   0      | Voto em branco ";
+        cout << "\n Seu voto : ";
+        cin >> cod;
+
+        switch (cod)
+        {
+        case 11:
+            maria = maria + 1;
+            total++;
+            break;
+        case 45:
+            joao = joao + 1;
+            total++;
+            break;
+        case 0:
+            branco = branco + 1;
+            total++;
+            break;
+        case 1234:
+            while (pass != senha)
+            {
+                cout << "\n Informe a senha : ";
+                cin >> pass;
+                if (pass == senha)
+                {
+                    cout << "\n Encerrada pelo presidente !! " << endl;
+                    cout << "\n Total de votos esperados na secao : " << n;
+                    cout << "\n Total de votos : " << total;
+                    cout << "\n\n Totalizacao dos Votos : " << endl;
+                    cout << "\n Maria : " << maria;
+                    cout << "\n Joao : " << joao;
+                    cout << "\n Voto em branco : " << branco;
+                    cout << "\n Nulos : " << nulo;
+                    return 0;
+                }
+            }
+            break;
+        default:
+            nulo++;
+            total++;
+            break;
+        }
+    }
+
+    cout << "\n Total de votos esperados na secao : " << n;
+    cout << "\n Total de votos : " << total;
+    cout << "\n\n Totalizacao dos Votos : " << endl;
+    cout << "\n Maria : " << maria;
+    cout << "\n Joao : " << joao;
+    cout << "\n Voto em branco : " << branco;
+    cout << "\n Nulos : " << nulo;
+
+    return 0;
+}
